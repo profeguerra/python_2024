@@ -10,7 +10,7 @@ list_my_students = [
     'Octavio',    #3 4
     'Ulises',     #4 5
     2024,         #5 6  
-    2.50,         #6 7
+    2.50,          #6 7
     'Paulina'     #7 8
 ]
 
@@ -26,7 +26,7 @@ list_my_students.insert(0, 'Isela')
 list_my_students.extend(['Javier', 'Isela', 'Limon'])
 '''
 
-print(list_my_students)
+#print(list_my_students)
 #remove elements
 #list_my_students.pop()
 #list_my_students.pop(1)
