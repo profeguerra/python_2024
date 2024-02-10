@@ -8,37 +8,6 @@ game_one = Game(1, 'Fizz Buzz')
 #print(game_one.id)
 #print(game_one.name)
 
-class Evaluate:
-
-    def __init__(self, number, list_number, index):
-        self.number = number        
-        self.list_number = list_number
-        self.index = index
-
-    def fizz_buzz(self):
-        if self.number % 3 == 0 and self.number % 5 == 0:
-            self.list_number[self.index] = 'fizz buzz'
-            print('fizz buzz')
-    
-    def fizz(self):
-        if self.number % 3 :
-            self.list_number[self.index] = 'fizz'
-    
-    def buzz(self):
-        if self.number % 5 == 0:
-            self.list_number[self.index] = 'buzz'
-
-'''
-number = 15
-list_number = [13, 14, 15, 16]
-index = 2
-evaluate_one = Evaluate(number, list_number, index)
-
-print(evaluate_one.fizz_buzz())
-print(evaluate_one.fizz())
-print(evaluate_one.buzz())
-'''
-
 class Dynamic_list:
 
     def __init__(self, start_number, end_number, list_number):
@@ -49,40 +18,67 @@ class Dynamic_list:
     def create_list(self):
         for value in range(self.start_number, self.end_number):
             self.list_number.append(value)
-            #insert evaluate object 
-            object.fizz_buzz()
         return self.list_number
+    
+ 
+
 
 my_list = []
 dynamic_list = Dynamic_list(1, 21, my_list)
-print(dynamic_list.create_list())
-'''
-'''
+list_created = dynamic_list.create_list()
+#print(list_created)
+#print(type(list_created))
 
+############################################################################################
 
-#evaluate_one = Evaluate(number, list_number, index)
+class Evaluate:
 
-class Game_fizz_buzz:
+    def __init__(self, list_number, counter):
+        self.list_number = list_number
+        self.counter = counter
 
-    def __init__(self, my_list):
-        self.my_list = my_list
-        
+    def list_validation(self):
+        return type(self.list_number)
+    
+    def fizz_buzz(self):
+        for number in self.list_number:
+            if number % 3 == 0 and number % 5 == 0:
+                self.counter += 1
+                return self.list_number[self.counter] 
+    def fizz(self):
+        for number in self.list_number:
+            if number % 3 == 0:
+                print(self.list_number[self.counter], 'fizz')
+                self.list_number[self.counter] = 'fizz'
+                self.counter += 1
+    
     '''
-    def game_fizz_buzz(self, list_number):
-        index = 2
-        self.my_list
-        index += 1
-        return list_number
+    def fizz(self):
+        for number in self.list_number:
+            if number % 3 :
+                self.list_number[self.index] = 'fizz'
+                print('fizz')
+    
+    def buzz(self):
+        for number in self.list_number:
+            if number % 5 == 0:
+                self.list_number[self.index] = 'buzz'
+                print('buzz')
     '''
+
+#list_number = [13, 14, 15, 16]
+#evaluate_one = Evaluate(list_number)
+
 '''
+print(evaluate_one.fizz_buzz())
+print(evaluate_one.fizz())
+print(evaluate_one.buzz())
 '''
-number = 15
-list_number = [13, 14, 15, 16]
-index = 2
-evaluate_one = Evaluate(number, list_number, index)
 
 
 
 
-object_fizz_buzz = Game_fizz_buzz(dynamic_list)
-print(object_fizz_buzz.game_fizz_buzz(dynamic_list))
+evaluate_one = Evaluate(list_created, 0)
+print(evaluate_one.fizz_buzz())
+print(evaluate_one.list_validation())
+print(evaluate_one.fizz())
