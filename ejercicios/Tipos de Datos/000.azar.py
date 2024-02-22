@@ -1,8 +1,8 @@
 import random
 
 
-jugadores = ['Paulina', 'Ibra', 'Maggie', 'Ulises', 'Luis']
-ejercicios = [1,2,3,4,5,6,7,8,9,10,11,12]
+jugadores = ['Paulina', 'Ibra', 'Maggie', 'Ulises']
+ejercicios = [1,2,3,4,5,6,7,8,9,10,11]
 ganadores = []
 
 '''
@@ -15,7 +15,7 @@ for index, ganador in enumerate(ganadores):
 '''
 
 
-for index in range(1, 13):
+for index in range(1, 12):
     ganador = random.choice(jugadores)
     ganadores.append(ganador)
 #print(ganadores)
@@ -23,7 +23,7 @@ for index in range(1, 13):
 for index, ganador in enumerate(ganadores):
     ganadores = index + 1, ganador
     print(ganadores)
-    archivo = open('lista_gandores.txt', 'a')
+    archivo = open('lista_ganadores.txt', 'a')
     archivo.write(str(ganadores))
 '''
 
@@ -33,7 +33,7 @@ for index, ganador in enumerate(ganadores):
     orden = index + 1
     ganadores_final = f'{orden}. {ganador}\n'
     print(ganadores_final)
-    archivo = open('lista_gandores_001.txt', 'a')
+    archivo = open('lista_gandores_cadenas.txt', 'a')
     archivo.write(ganadores_final)
 
 
